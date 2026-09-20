@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Search, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Hero3DScene from "../3d/Hero3DScene";
+import heroImage from "../../assets/hero.png";
 import { sound } from "../../services/audioService";
 
 export default function HeroSection({ onOpenSearch }) {
@@ -109,10 +109,43 @@ export default function HeroSection({ onOpenSearch }) {
             </div>
           </div>
 
-          {/* Right Hero 3D Flying Doraemon Experience */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="w-full max-w-[480px] bg-sky-200/30 backdrop-blur-xs rounded-3xl p-2 border border-white/50 shadow-xl">
-              <Hero3DScene />
+          {/* Right Hero Transparent Doreamon & Nobita Presentation */}
+          <div className="lg:col-span-5 relative flex items-center justify-center pt-6 lg:pt-0">
+            {/* Ambient Background Aura */}
+            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-amber-300/35 via-sky-300/30 to-sky-400/25 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Interactive Showcase Container */}
+            <div className="relative group flex flex-col items-center justify-center">
+              {/* Floating Badge (Top-Left) */}
+              <div className="absolute -top-3 -left-3 sm:-left-6 z-20 px-3.5 py-1.5 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-sky-100 flex items-center gap-2 animate-float-subtle">
+                <span className="text-base">🤠</span>
+                <div className="text-left">
+                  <p className="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 leading-tight">Wild West</p>
+                  <p className="text-xs font-bold text-slate-800 leading-tight">Doreamon & Nobita</p>
+                </div>
+              </div>
+
+              {/* Floating Badge (Bottom-Right) */}
+              <div
+                className="absolute -bottom-2 -right-3 sm:-right-6 z-20 px-3.5 py-1.5 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-sky-100 flex items-center gap-2 animate-float-subtle"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                <span className="text-xs font-bold text-slate-800">Best Friends</span>
+              </div>
+
+              {/* Transparent Hero Image */}
+              <div className="relative z-10 transition-transform duration-500 ease-out transform group-hover:scale-105 group-hover:-translate-y-2 animate-float-subtle">
+                <img
+                  src={heroImage}
+                  alt="Doreamon and Nobita in Cowboy Outfits"
+                  className="w-auto h-[360px] sm:h-[430px] lg:h-[470px] max-w-full object-contain drop-shadow-[0_20px_35px_rgba(2,132,199,0.25)] select-none filter group-hover:brightness-105 transition-all"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Soft Ground Shadow */}
+              <div className="w-48 sm:w-60 h-5 bg-sky-950/15 rounded-full blur-md -mt-3 z-0" />
             </div>
           </div>
 
