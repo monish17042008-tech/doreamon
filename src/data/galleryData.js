@@ -1,4 +1,65 @@
+import takecopterImg from "../assets/gallery/takecopter-sky-adventure.jpg";
+import rainyDayUmbrellaImg from "../assets/gallery/rainy-day-umbrella.jpg";
+import nobitaRoomGadgetImg from "../assets/gallery/nobita-room-gadget-chaos.jpg";
+import nobitaShizukaPromiseImg from "../assets/gallery/nobita-shizuka-promise.jpg";
+import nobitaDeterminedStudyImg from "../assets/gallery/nobita-determined-study.jpg";
+
 export const galleryData = [
+  {
+    id: "gal-takecopter-adventure",
+    title: "Take-copter Sky Patrol",
+    category: "Wallpapers",
+    src: takecopterImg,
+    thumbnail: takecopterImg,
+    caption: "Doraemon, Nobita, Shizuka, Gian, and Suneo taking flight across the boundless azure skies using the iconic Take-copter.",
+    resolution: "1920 x 1080",
+    date: "2024",
+    likes: 3840
+  },
+  {
+    id: "gal-rainy-day-walk",
+    title: "Walking in the Rain Together",
+    category: "Characters",
+    src: rainyDayUmbrellaImg,
+    thumbnail: rainyDayUmbrellaImg,
+    caption: "Nobita and Shizuka sharing a warm, cheerful walk home from school under a bright yellow umbrella during a gentle rain.",
+    resolution: "1280 x 720",
+    date: "2024",
+    likes: 3520
+  },
+  {
+    id: "gal-nobita-room-gadgets",
+    title: "Afternoon Gadget Chaos",
+    category: "Gadgets",
+    src: nobitaRoomGadgetImg,
+    thumbnail: nobitaRoomGadgetImg,
+    caption: "Nobita relaxing with the TV remote amidst comic books and scattered 22nd-century inventions while Doraemon sits at his desk.",
+    resolution: "1920 x 1080",
+    date: "2024",
+    likes: 2950
+  },
+  {
+    id: "gal-nobita-shizuka-promise",
+    title: "Nobita & Shizuka Heartfelt Moment",
+    category: "Characters",
+    src: nobitaShizukaPromiseImg,
+    thumbnail: nobitaShizukaPromiseImg,
+    caption: "Nobita and Shizuka sharing an innocent, blushing moment of friendship and encouragement.",
+    resolution: "1280 x 720",
+    date: "2024",
+    likes: 3180
+  },
+  {
+    id: "gal-nobita-exam-focus",
+    title: "Nobita's High-Focus Study Session",
+    category: "Characters",
+    src: nobitaDeterminedStudyImg,
+    thumbnail: nobitaDeterminedStudyImg,
+    caption: "Nobita putting on his victory headband with intense determination to study his notes and ace his upcoming tests.",
+    resolution: "1080 x 1920",
+    date: "2024",
+    likes: 2760
+  },
   {
     id: "gal-1",
     title: "Doraemon Soaring Over Mount Fuji",
