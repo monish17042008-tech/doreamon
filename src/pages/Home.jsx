@@ -8,7 +8,7 @@ import AboutSection from "../components/home/AboutSection";
 
 export default function Home({ onOpenSearch }) {
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-[#070f26] flex flex-col">
       {/* 3D Interactive Hero Banner */}
       <HeroSection onOpenSearch={onOpenSearch} />
 

@@ -458,34 +458,34 @@ export default function Game() {
   const letterGrade = score >= 1200 ? "S" : score >= 800 ? "A" : score >= 500 ? "B" : "C";
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#070f26] py-10 px-4 sm:px-6 lg:px-8 text-white">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header Title */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">
-            <Gamepad2 className="w-4 h-4 text-amber-500" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs font-bold">
+            <Gamepad2 className="w-4 h-4 text-amber-400" />
             <span>60FPS Arcade Experience</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-black text-slate-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-display font-black text-white tracking-tight">
             Dorayaki Sky Catch
           </h1>
-          <p className="text-slate-600 text-sm max-w-xl mx-auto">
+          <p className="text-slate-300 text-sm max-w-xl mx-auto">
             Fly Doraemon with his Take-copter! Catch as many sweet Dorayakis as possible, grab golden bells & anywhere doors, and dodge scary mice!
           </p>
         </div>
 
         {/* Game Container */}
-        <div className="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-card space-y-4">
+        <div className="bg-[#0b1636] rounded-3xl p-4 sm:p-6 border border-[#193275]/70 shadow-2xl space-y-4">
           {/* Game HUD */}
-          <div className="flex flex-wrap items-center justify-between gap-4 bg-sky-50 px-5 py-3 rounded-2xl border border-sky-100 font-bold text-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4 bg-[#070f26] px-5 py-3 rounded-2xl border border-[#193275]/70 font-bold text-sm">
             {/* Lives */}
-            <div className="flex items-center gap-1.5 text-rose-600">
-              <span className="text-xs text-slate-500 uppercase mr-1">Lives:</span>
+            <div className="flex items-center gap-1.5 text-rose-500">
+              <span className="text-xs text-sky-300/70 uppercase mr-1">Lives:</span>
               {[1, 2, 3].map((heart) => (
                 <Heart
                   key={heart}
                   className={`w-5 h-5 ${
-                    heart <= lives ? "fill-rose-500 text-rose-500" : "text-slate-300"
+                    heart <= lives ? "fill-rose-500 text-rose-500" : "text-slate-700"
                   }`}
                 />
               ))}
@@ -493,25 +493,25 @@ export default function Game() {
 
             {/* Score & Dorayakis */}
             <div className="flex items-center gap-4">
-              <div className="text-slate-700">
-                <span className="text-xs text-slate-400 uppercase mr-1.5">Score:</span>
-                <span className="text-lg font-display font-extrabold text-sky-600">{score}</span>
+              <div className="text-white">
+                <span className="text-xs text-sky-300/70 uppercase mr-1.5">Score:</span>
+                <span className="text-lg font-display font-extrabold text-sky-400">{score}</span>
               </div>
-              <div className="text-slate-700">
-                <span className="text-xs text-slate-400 uppercase mr-1.5">Dorayakis:</span>
-                <span className="text-lg font-display font-extrabold text-amber-600">{dorayakiCount}</span>
+              <div className="text-white">
+                <span className="text-xs text-sky-300/70 uppercase mr-1.5">Dorayakis:</span>
+                <span className="text-lg font-display font-extrabold text-amber-400">{dorayakiCount}</span>
               </div>
             </div>
 
             {/* Timer */}
-            <div className="flex items-center gap-2 text-slate-700">
-              <Clock className="w-4 h-4 text-sky-500" />
+            <div className="flex items-center gap-2 text-white">
+              <Clock className="w-4 h-4 text-sky-400" />
               <span className="font-mono text-base">{timeLeft}s</span>
             </div>
           </div>
 
           {/* Canvas Wrapper */}
-          <div className="relative aspect-[16/10] sm:aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-inner border border-sky-200 bg-sky-100">
+          <div className="relative aspect-[16/10] sm:aspect-[2/1] w-full rounded-2xl overflow-hidden shadow-inner border border-[#193275]/80 bg-[#070f26]">
             <canvas
               ref={canvasRef}
               width={800}
@@ -523,15 +523,15 @@ export default function Game() {
 
             {/* Start / Ready Screen Overlay */}
             {gameState === "ready" && (
-              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs flex flex-col items-center justify-center text-white p-6 text-center space-y-4">
+              <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-xs flex flex-col items-center justify-center text-white p-6 text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-amber-400 flex items-center justify-center shadow-lg text-slate-950 animate-bounce">
                   <Gamepad2 className="w-8 h-8" />
                 </div>
                 <div className="space-y-1">
-                  <h2 className="text-2xl sm:text-3xl font-display font-black">
+                  <h2 className="text-2xl sm:text-3xl font-display font-black text-white">
                     Ready to Take Flight?
                   </h2>
-                  <p className="text-xs sm:text-sm text-sky-100 max-w-md">
+                  <p className="text-xs sm:text-sm text-sky-200 max-w-md">
                     Use your Mouse, Touch, or Arrow keys / WASD to fly Doraemon. Catch Dorayakis (+10) and Bells (+50), but watch out for sneaky Mice!
                   </p>
                 </div>
@@ -546,23 +546,23 @@ export default function Game() {
 
             {/* Game Over Screen Overlay */}
             {gameState === "gameover" && (
-              <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center text-white p-6 text-center space-y-5 animate-fade-in">
+              <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center text-white p-6 text-center space-y-5 animate-fade-in">
                 <div className="space-y-1">
                   <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
                     Mission Accomplished
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-display font-black">
+                  <h2 className="text-3xl sm:text-4xl font-display font-black text-white">
                     Flight Summary
                   </h2>
                 </div>
 
                 {/* Score Summary Box */}
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 flex items-center justify-center gap-8 text-center min-w-[280px]">
+                <div className="bg-[#0b1636]/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-[#193275]/80 flex items-center justify-center gap-8 text-center min-w-[280px]">
                   <div>
                     <span className="block text-xs font-bold text-sky-200 uppercase">Final Score</span>
                     <span className="text-3xl font-display font-black text-amber-300">{score}</span>
                   </div>
-                  <div className="border-l border-white/20 pl-8">
+                  <div className="border-l border-[#193275]/80 pl-8">
                     <span className="block text-xs font-bold text-sky-200 uppercase">Pilot Grade</span>
                     <span className="text-4xl font-display font-black text-emerald-400">{letterGrade}</span>
                   </div>
@@ -577,7 +577,7 @@ export default function Game() {
                       onChange={(e) => setPlayerName(e.target.value)}
                       placeholder="Enter Pilot Call-sign..."
                       maxLength={16}
-                      className="flex-1 px-4 py-2.5 rounded-xl bg-white text-slate-800 text-xs sm:text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                      className="flex-1 px-4 py-2.5 rounded-xl bg-[#070f26] border border-[#193275]/80 text-white text-xs sm:text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                     />
                     <button
                       type="submit"
@@ -594,7 +594,7 @@ export default function Game() {
 
                 <button
                   onClick={startGame}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm transition-all shadow-md"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm transition-all shadow-md shadow-sky-500/20"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Play Again</span>
@@ -604,26 +604,26 @@ export default function Game() {
           </div>
 
           {/* Controls hint */}
-          <div className="text-center text-xs text-slate-500 font-medium">
+          <div className="text-center text-xs text-sky-300/80 font-medium">
             Controls: Move your mouse or fingers across the sky, or use Arrow keys / WASD.
           </div>
         </div>
 
         {/* Global Hall of Fame Leaderboard */}
-        <section className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-card space-y-6">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+        <section className="bg-[#0b1636] rounded-3xl p-6 sm:p-8 border border-[#193275]/70 shadow-2xl space-y-6 text-white">
+          <div className="flex items-center justify-between border-b border-[#193275]/60 pb-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
+              <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/30 text-amber-400 flex items-center justify-center font-bold">
                 <Trophy className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg sm:text-xl font-display font-extrabold text-slate-800">
+                <h2 className="text-lg sm:text-xl font-display font-extrabold text-white">
                   Hall of Fame Leaderboard
                 </h2>
-                <p className="text-xs text-slate-500">Top Doraemon pilots across Tokyo and the 22nd Century</p>
+                <p className="text-xs text-slate-300">Top Doraemon pilots across Tokyo and the 22nd Century</p>
               </div>
             </div>
-            <span className="text-xs font-bold text-sky-600 bg-sky-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-sky-300 bg-[#070f26] border border-[#193275]/60 px-3 py-1 rounded-full">
               Live Standings
             </span>
           </div>
@@ -632,7 +632,7 @@ export default function Game() {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs sm:text-sm">
               <thead>
-                <tr className="text-slate-400 border-b border-slate-100 text-[11px] font-bold uppercase tracking-wider">
+                <tr className="text-sky-300/70 border-b border-[#193275]/60 text-[11px] font-bold uppercase tracking-wider">
                   <th className="pb-3 pl-2">Rank</th>
                   <th className="pb-3">Pilot</th>
                   <th className="pb-3">Badge</th>
@@ -640,45 +640,45 @@ export default function Game() {
                   <th className="pb-3 text-right pr-2">Score</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-semibold">
+              <tbody className="divide-y divide-[#193275]/40 font-semibold">
                 {leaderboard.slice(0, 10).map((entry, index) => (
                   <tr
                     key={entry.id || index}
-                    className={`hover:bg-slate-50 transition-colors ${
-                      index === 0 ? "bg-amber-50/50" : ""
+                    className={`hover:bg-[#0f1f4b] transition-colors ${
+                      index === 0 ? "bg-amber-950/25" : ""
                     }`}
                   >
                     <td className="py-3.5 pl-2 font-bold font-mono">
                       {index === 0 ? (
-                        <span className="text-amber-500 flex items-center gap-1">
+                        <span className="text-amber-400 flex items-center gap-1">
                           <Medal className="w-4 h-4" /> #1
                         </span>
                       ) : index === 1 ? (
                         <span className="text-slate-400">#2</span>
                       ) : index === 2 ? (
-                        <span className="text-amber-700">#3</span>
+                        <span className="text-amber-600">#3</span>
                       ) : (
                         <span className="text-slate-400">#{index + 1}</span>
                       )}
                     </td>
-                    <td className="py-3.5 text-slate-800 font-bold">
+                    <td className="py-3.5 text-white font-bold">
                       {entry.playerName}
                     </td>
                     <td className="py-3.5">
                       <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold ${
                         entry.badge === "Legend"
-                          ? "bg-amber-100 text-amber-800"
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-400/30"
                           : entry.badge === "Master"
-                          ? "bg-purple-100 text-purple-800"
-                          : "bg-sky-100 text-sky-800"
+                          ? "bg-purple-500/20 text-purple-300 border border-purple-400/30"
+                          : "bg-sky-500/20 text-sky-300 border border-sky-400/30"
                       }`}>
                         {entry.badge}
                       </span>
                     </td>
-                    <td className="py-3.5 text-center text-slate-600 font-mono">
+                    <td className="py-3.5 text-center text-sky-200 font-mono">
                       {entry.dorayakis}
                     </td>
-                    <td className="py-3.5 text-right pr-2 font-display font-black text-sky-600">
+                    <td className="py-3.5 text-right pr-2 font-display font-black text-sky-400">
                       {entry.score.toLocaleString()}
                     </td>
                   </tr>

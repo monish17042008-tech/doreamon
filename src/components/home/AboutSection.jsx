@@ -5,16 +5,16 @@ import { sound } from "../../services/audioService";
 
 export default function AboutSection() {
   return (
-    <div className="bg-sky-50/70 rounded-3xl border border-sky-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-card hover:shadow-soft transition-all">
+    <div className="bg-[#0b1636] rounded-3xl border border-[#193275]/80 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl transition-all">
       <div className="flex-1 text-left">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100/80 text-sky-800 text-xs font-bold mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-sky-400" />
           <span>22nd-Century Legend</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-slate-800 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
           About Doraemon
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+        <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
           Doraemon is a robotic cat from the 22nd century, sent back in time to help Nobita, a kind and clumsy boy, with his daily life. With his magical gadgets and big heart, Doraemon teaches us the value of friendship, courage, and never giving up!
         </p>
         <div className="mt-6 flex items-center gap-4">
@@ -26,7 +26,7 @@ export default function AboutSection() {
             <span>Learn More</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <span className="text-xs text-slate-400 font-medium hidden sm:inline">
+          <span className="text-xs text-sky-300/60 font-medium hidden sm:inline">
             Created by Fujiko F. Fujio (1969)
           </span>
         </div>

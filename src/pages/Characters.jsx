@@ -54,18 +54,18 @@ export default function Characters() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-50/60 pb-20">
+    <div className="min-h-screen bg-[#070f26] pb-20">
       {/* Top Banner Header */}
-      <div className="bg-gradient-to-b from-sky-500 to-sky-600 text-white py-14 px-4 border-b-4 border-sky-400">
+      <div className="bg-gradient-to-b from-[#040817] via-[#071333] to-[#0b1b44] text-white py-14 px-4 border-b border-[#193275]/60 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-sky-100 text-xs font-bold mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#070f26]/80 border border-[#193275]/70 backdrop-blur-md text-sky-300 text-xs font-bold mb-3">
             <Users className="w-3.5 h-3.5 text-amber-300" />
             <span>Official Character Roster & Voting</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-display font-black tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-display font-black tracking-tight text-white">
             Beloved Characters
           </h1>
-          <p className="mt-2 text-sky-100 text-sm sm:text-base max-w-2xl">
+          <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-2xl">
             Explore deep biographies, voice actor credits, attribute charts, and vote for your favorite companion from the Doraemon universe!
           </p>
         </div>
@@ -76,22 +76,22 @@ export default function Characters() {
         <CharacterRankingBar characters={charactersData} votes={votes} />
 
         {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-[#0b1636] rounded-2xl p-4 border border-[#193275]/70 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Search Input */}
           <div className="relative w-full md:w-80">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+            <Search className="w-4 h-4 text-sky-400 absolute left-3.5 top-3" />
             <input
               type="text"
               placeholder="Filter characters by name or quote..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-sky-400"
+              className="w-full pl-10 pr-4 py-2 bg-[#070f26] border border-[#193275]/80 rounded-xl text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-400"
             />
           </div>
 
           {/* Role Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            <span className="text-xs font-bold text-slate-400 hidden sm:inline flex items-center gap-1">
+            <span className="text-xs font-bold text-sky-300/80 hidden sm:inline flex items-center gap-1">
               <Filter className="w-3 h-3" /> Category:
             </span>
             {[
@@ -106,7 +106,7 @@ export default function Characters() {
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   filterRole === btn.id
                     ? "bg-sky-500 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    : "bg-[#070f26] text-slate-300 border border-[#193275]/60 hover:bg-[#0f1f4b]"
                 }`}
               >
                 {btn.label}

@@ -32,7 +32,7 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
         sound.playClick();
         onSelect(character);
       }}
-      className="bg-white rounded-3xl border border-slate-200/80 shadow-soft hover:shadow-card transition-all duration-200 flex flex-col justify-between overflow-hidden group cursor-pointer"
+      className="bg-[#0b1636] rounded-3xl border border-[#193275]/70 hover:border-sky-400/60 shadow-xl transition-all duration-200 flex flex-col justify-between overflow-hidden group cursor-pointer"
     >
       <div>
         {/* Top Header Card Color Bar */}
@@ -52,13 +52,10 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
                 {character.name.charAt(0)}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-slate-800 group-hover:text-sky-600 transition-colors">
+                <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors">
                   {character.name}
                 </h3>
-                <p className="text-xs font-medium text-slate-400 font-serif">
-                  {character.japaneseName}
-                </p>
-                <span className="inline-block mt-1 px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider">
+                <span className="inline-block mt-1 px-2 py-0.5 rounded-md bg-[#070f26] border border-[#193275]/60 text-sky-300 text-[10px] font-bold uppercase tracking-wider">
                   {character.badge}
                 </span>
               </div>
@@ -66,37 +63,37 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
 
             {/* Vote percentage pill */}
             <div className="text-right">
-              <span className="text-base font-extrabold text-slate-800 font-mono">
+              <span className="text-base font-extrabold text-sky-300 font-mono">
                 {percentage}%
               </span>
-              <p className="text-[10px] text-slate-400 font-medium">share of votes</p>
+              <p className="text-[10px] text-sky-300/70 font-medium">share of votes</p>
             </div>
           </div>
 
           {/* Bio Snippet */}
-          <p className="text-xs text-slate-600 leading-relaxed mt-4 line-clamp-3">
+          <p className="text-xs text-slate-300 leading-relaxed mt-4 line-clamp-3">
             {character.bio}
           </p>
 
           {/* Quick Facts */}
-          <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs">
-            <div className="flex items-center gap-2 text-slate-600">
-              <Utensils className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
-              <span className="text-slate-400 font-medium">Favorite:</span>
-              <span className="font-semibold truncate">{character.favoriteFood}</span>
+          <div className="mt-4 pt-3 border-t border-[#193275]/60 space-y-1.5 text-xs">
+            <div className="flex items-center gap-2 text-slate-300">
+              <Utensils className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+              <span className="text-sky-300/70 font-medium">Favorite:</span>
+              <span className="font-semibold truncate text-white">{character.favoriteFood}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-600">
-              <AlertTriangle className="w-3.5 h-3.5 text-rose-500 flex-shrink-0" />
-              <span className="text-slate-400 font-medium">Weakness:</span>
-              <span className="font-semibold truncate">{character.weakness}</span>
+            <div className="flex items-center gap-2 text-slate-300">
+              <AlertTriangle className="w-3.5 h-3.5 text-rose-400 flex-shrink-0" />
+              <span className="text-sky-300/70 font-medium">Weakness:</span>
+              <span className="font-semibold truncate text-white">{character.weakness}</span>
             </div>
           </div>
 
           {/* Stats Preview Bar */}
-          <div className="mt-4 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px]">
+          <div className="mt-4 pt-3 border-t border-[#193275]/60 grid grid-cols-2 gap-2 text-[11px]">
             <div>
-              <span className="text-slate-400">Kindness</span>
-              <div className="w-full bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden">
+              <span className="text-sky-300/70">Kindness</span>
+              <div className="w-full bg-[#070f26] border border-[#193275]/30 rounded-full h-1.5 mt-1 overflow-hidden">
                 <div
                   className="bg-emerald-500 h-full rounded-full"
                   style={{ width: `${character.stats.kindness}%` }}
@@ -104,8 +101,8 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
               </div>
             </div>
             <div>
-              <span className="text-slate-400">Bravery</span>
-              <div className="w-full bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden">
+              <span className="text-sky-300/70">Bravery</span>
+              <div className="w-full bg-[#070f26] border border-[#193275]/30 rounded-full h-1.5 mt-1 overflow-hidden">
                 <div
                   className="bg-amber-500 h-full rounded-full"
                   style={{ width: `${character.stats.bravery}%` }}
@@ -117,12 +114,12 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
       </div>
 
       {/* Action Footer */}
-      <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-3">
+      <div className="px-6 py-4 bg-[#070f26] border-t border-[#193275]/60 flex items-center justify-between gap-3">
         <button
           onClick={handleVoteClick}
-          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-200 text-slate-700 hover:text-rose-600 text-xs font-bold shadow-xs transition-all active:scale-95 group/btn"
+          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#0b1636] hover:bg-rose-950/40 border border-[#193275]/80 hover:border-rose-500/50 text-slate-200 hover:text-rose-300 text-xs font-bold shadow-xs transition-all active:scale-95 group/btn"
         >
-          <Heart className="w-4 h-4 text-rose-500 fill-rose-500 transition-transform group-hover/btn:scale-125" />
+          <Heart className="w-4 h-4 text-rose-400 fill-rose-400 transition-transform group-hover/btn:scale-125" />
           <span>Vote ({charVotes.toLocaleString()})</span>
         </button>
 
@@ -131,7 +128,7 @@ export default function CharacterCard({ character, votes, totalVotes, onVote, on
             sound.playClick();
             onSelect(character);
           }}
-          className="p-2 rounded-xl text-slate-400 hover:text-sky-600 hover:bg-sky-50 transition-colors"
+          className="p-2 rounded-xl text-sky-400 hover:text-white hover:bg-[#0f1f4b] transition-colors"
           title="View Character Dossier"
         >
           <ChevronRight className="w-5 h-5" />

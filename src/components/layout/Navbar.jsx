@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-sky-100 shadow-sm transition-all">
+      <header className="sticky top-0 z-40 bg-[#070f26]/95 backdrop-blur-md border-b border-[#193275]/60 shadow-lg transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           {/* Brand Logo */}
           <Link
@@ -42,7 +42,7 @@ export default function Navbar() {
             className="flex items-center gap-3 group focus:outline-none"
           >
             {/* Doraemon Face Icon Badge */}
-            <div className="relative w-11 h-11 rounded-full bg-sky-500 flex items-center justify-center shadow-md shadow-sky-500/20 border-2 border-white overflow-hidden transform transition-transform group-hover:scale-105">
+            <div className="relative w-11 h-11 rounded-full bg-sky-500 flex items-center justify-center shadow-md shadow-sky-500/30 border-2 border-white/90 overflow-hidden transform transition-transform group-hover:scale-105">
               <svg viewBox="0 0 100 100" className="w-full h-full">
                 {/* Blue head background */}
                 <circle cx="50" cy="50" r="48" fill="#0284c7" />
@@ -73,10 +73,10 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-800 leading-none">
+              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white leading-none">
                 Doreamon
               </span>
-              <span className="text-[10px] text-sky-600 font-semibold tracking-wider uppercase mt-0.5">
+              <span className="text-[10px] text-sky-400 font-bold tracking-wider uppercase mt-0.5">
                 Official Portal
               </span>
             </div>
@@ -93,8 +93,8 @@ export default function Navbar() {
                   onClick={() => sound.playClick()}
                   className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                     active
-                      ? "text-sky-600 bg-sky-50 shadow-sm"
-                      : "text-slate-600 hover:text-sky-600 hover:bg-slate-50"
+                      ? "text-white bg-sky-600/30 border border-sky-400/40 shadow-sm"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.name}
@@ -109,9 +109,9 @@ export default function Navbar() {
             <button
               onClick={toggleAudio}
               title={isMuted ? "Unmute Audio Effects" : "Mute Audio Effects"}
-              className="p-2 rounded-xl text-slate-500 hover:text-sky-600 hover:bg-sky-50 transition-colors"
+              className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
             >
-              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-sky-500" />}
+              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-sky-400" />}
             </button>
 
             {/* Search Trigger Button */}
@@ -120,11 +120,11 @@ export default function Navbar() {
                 sound.playClick();
                 setIsSearchOpen(true);
               }}
-              className="flex items-center gap-2 p-2 sm:px-3 sm:py-2 rounded-xl text-slate-500 hover:text-sky-600 hover:bg-sky-50 transition-colors"
+              className="flex items-center gap-2 p-2 sm:px-3 sm:py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
               title="Search (Ctrl + K)"
             >
               <Search className="w-5 h-5" />
-              <span className="hidden lg:inline text-xs text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded font-mono">
+              <span className="hidden lg:inline text-xs text-slate-400 bg-[#0f1f4b] border border-[#193275] px-1.5 py-0.5 rounded font-mono">
                 ⌘K
               </span>
             </button>
@@ -135,7 +135,7 @@ export default function Navbar() {
               onClick={() => {
                 sound.playBellChime();
               }}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white text-sm font-bold shadow-md shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white text-sm font-bold shadow-md shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Gamepad2 className="w-4 h-4" />
               <span>Let&apos;s Go!</span>
@@ -144,7 +144,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 md:hidden rounded-xl text-slate-600 hover:text-sky-600 hover:bg-slate-100"
+              className="p-2 md:hidden rounded-xl text-slate-300 hover:text-white hover:bg-white/10"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -153,7 +153,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-100 bg-white px-4 py-3 space-y-1 shadow-lg animate-fade-in">
+          <div className="md:hidden border-t border-[#193275]/60 bg-[#070f26] px-4 py-3 space-y-1 shadow-2xl animate-fade-in">
             {navLinks.map((link) => {
               const active = isActive(link.path);
               return (
@@ -166,8 +166,8 @@ export default function Navbar() {
                   }}
                   className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                     active
-                      ? "text-sky-600 bg-sky-50 font-bold"
-                      : "text-slate-600 hover:text-sky-600 hover:bg-slate-50"
+                      ? "text-white bg-sky-600/30 border border-sky-400/30 font-bold"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.name}

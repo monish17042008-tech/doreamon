@@ -19,13 +19,13 @@ export default function GalleryPreview() {
     <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold text-slate-800 tracking-tight">
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold text-white tracking-tight">
           Gallery
         </h2>
         <Link
           to="/gallery"
           onClick={() => sound.playClick()}
-          className="inline-flex items-center gap-1 text-sm font-bold text-sky-600 hover:text-sky-700 transition-colors group"
+          className="inline-flex items-center gap-1 text-sm font-bold text-sky-400 hover:text-sky-300 transition-colors group"
         >
           <span>View All</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -38,7 +38,7 @@ export default function GalleryPreview() {
           <div
             key={img.id}
             onClick={() => handleOpenImage(img)}
-            className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-card cursor-pointer bg-slate-100"
+            className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#193275]/70 hover:border-sky-400/60 shadow-lg cursor-pointer bg-[#070f26]"
           >
             <img
               src={img.thumbnail}
@@ -47,17 +47,17 @@ export default function GalleryPreview() {
               loading="lazy"
             />
             {/* Dark Hover Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-3">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-3">
               <span className="text-white text-xs font-bold line-clamp-1">
                 {img.title}
               </span>
-              <span className="text-[11px] text-sky-200 mt-0.5">
+              <span className="text-[11px] text-sky-300 mt-0.5">
                 {img.category} • {img.resolution}
               </span>
             </div>
 
             {/* Corner Zoom Pill */}
-            <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/80 backdrop-blur-xs text-slate-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-[#070f26]/80 backdrop-blur-xs text-sky-200 border border-[#193275]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <Maximize2 className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -71,25 +71,25 @@ export default function GalleryPreview() {
           onClick={() => setActiveImage(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col"
+            className="relative max-w-4xl w-full bg-[#070f26] rounded-3xl overflow-hidden border border-[#193275]/80 shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Bar */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 text-white">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#193275]/60 text-white">
               <div>
                 <h3 className="text-base sm:text-lg font-bold">{activeImage.title}</h3>
-                <p className="text-xs text-slate-400">{activeImage.category} • {activeImage.resolution}</p>
+                <p className="text-xs text-sky-300/80">{activeImage.category} • {activeImage.resolution}</p>
               </div>
               <button
                 onClick={() => setActiveImage(null)}
-                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-[#0b1636] hover:bg-[#14275e] text-slate-200 border border-[#193275]/60 hover:text-white flex items-center justify-center transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* High Res Image */}
-            <div className="relative max-h-[65vh] flex items-center justify-center bg-black/50 p-2 overflow-hidden">
+            <div className="relative max-h-[65vh] flex items-center justify-center bg-black/60 p-2 overflow-hidden">
               <img
                 src={activeImage.src}
                 alt={activeImage.title}
@@ -98,7 +98,7 @@ export default function GalleryPreview() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 bg-slate-900/90 border-t border-slate-800 text-slate-300 text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 bg-[#070f26]/90 border-t border-[#193275]/60 text-slate-300 text-xs">
               <p className="max-w-xl text-slate-300">{activeImage.caption}</p>
               <div className="flex items-center gap-3">
                 <a
@@ -106,7 +106,7 @@ export default function GalleryPreview() {
                   target="_blank"
                   rel="noreferrer"
                   download
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold transition-colors shadow-md shadow-sky-600/30"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download High-Res</span>

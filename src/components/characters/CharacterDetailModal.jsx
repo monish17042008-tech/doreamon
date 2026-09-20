@@ -26,7 +26,7 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 overflow-hidden text-left"
+        className="bg-[#070f26] rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#193275]/80 overflow-hidden text-left text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Banner */}
@@ -55,7 +55,7 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
 
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-black/20 hover:bg-black/30 text-white flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full bg-black/20 hover:bg-black/40 text-white flex items-center justify-center transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -65,9 +65,9 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
         <div className="p-6 sm:p-8 space-y-6">
           {/* Quote Banner */}
           {character.memorableQuote && (
-            <div className="bg-sky-50 rounded-2xl p-4 border border-sky-100 flex items-start gap-3">
-              <Quote className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm italic font-medium text-sky-950">
+            <div className="bg-sky-950/40 rounded-2xl p-4 border border-sky-500/30 flex items-start gap-3">
+              <Quote className="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5" />
+              <p className="text-sm italic font-medium text-sky-200">
                 &ldquo;{character.memorableQuote}&rdquo;
               </p>
             </div>
@@ -75,72 +75,72 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
 
           {/* Quick Specifications Grid */}
           <div className="grid grid-cols-3 gap-3">
-            <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 text-center">
-              <Calendar className="w-4 h-4 text-sky-500 mx-auto mb-1" />
-              <span className="text-[10px] text-slate-400 font-bold uppercase block">Birthday</span>
-              <span className="text-xs font-bold text-slate-700">{character.birthDate}</span>
+            <div className="bg-[#0b1636] p-3 rounded-2xl border border-[#193275]/60 text-center">
+              <Calendar className="w-4 h-4 text-sky-400 mx-auto mb-1" />
+              <span className="text-[10px] text-sky-300/70 font-bold uppercase block">Birthday</span>
+              <span className="text-xs font-bold text-white">{character.birthDate}</span>
             </div>
-            <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 text-center">
-              <Ruler className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
-              <span className="text-[10px] text-slate-400 font-bold uppercase block">Height</span>
-              <span className="text-xs font-bold text-slate-700">{character.height}</span>
+            <div className="bg-[#0b1636] p-3 rounded-2xl border border-[#193275]/60 text-center">
+              <Ruler className="w-4 h-4 text-emerald-400 mx-auto mb-1" />
+              <span className="text-[10px] text-sky-300/70 font-bold uppercase block">Height</span>
+              <span className="text-xs font-bold text-white">{character.height}</span>
             </div>
-            <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 text-center">
-              <Scale className="w-4 h-4 text-amber-500 mx-auto mb-1" />
-              <span className="text-[10px] text-slate-400 font-bold uppercase block">Weight</span>
-              <span className="text-xs font-bold text-slate-700">{character.weight}</span>
+            <div className="bg-[#0b1636] p-3 rounded-2xl border border-[#193275]/60 text-center">
+              <Scale className="w-4 h-4 text-amber-400 mx-auto mb-1" />
+              <span className="text-[10px] text-sky-300/70 font-bold uppercase block">Weight</span>
+              <span className="text-xs font-bold text-white">{character.weight}</span>
             </div>
           </div>
 
           {/* Full Biography */}
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+            <h4 className="text-xs font-bold text-sky-300/80 uppercase tracking-wider mb-2">
               Character Lore & Backstory
             </h4>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               {character.bio}
             </p>
           </div>
 
           {/* Core Attribute Radar / Bars */}
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+            <h4 className="text-xs font-bold text-sky-300/80 uppercase tracking-wider mb-3">
               Attribute Ratings
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
                 <div className="flex justify-between font-semibold mb-1">
-                  <span className="text-slate-600">Kindness & Empathy</span>
-                  <span className="text-slate-800">{character.stats.kindness}%</span>
+                  <span className="text-slate-300">Kindness & Empathy</span>
+                  <span className="text-sky-200">{character.stats.kindness}%</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2">
+                <div className="w-full bg-[#0b1636] rounded-full h-2 overflow-hidden border border-[#193275]/40">
                   <div className="bg-emerald-500 h-full rounded-full" style={{ width: `${character.stats.kindness}%` }} />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between font-semibold mb-1">
-                  <span className="text-slate-600">Intelligence & Logic</span>
-                  <span className="text-slate-800">{character.stats.intelligence}%</span>
+                  <span className="text-slate-300">Intelligence & Logic</span>
+                  <span className="text-sky-200">{character.stats.intelligence}%</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2">
+                <div className="w-full bg-[#0b1636] rounded-full h-2 overflow-hidden border border-[#193275]/40">
                   <div className="bg-sky-500 h-full rounded-full" style={{ width: `${character.stats.intelligence}%` }} />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between font-semibold mb-1">
-                  <span className="text-slate-600">Bravery in Crisis</span>
-                  <span className="text-slate-800">{character.stats.bravery}%</span>
+                  <span className="text-slate-300">Bravery in Crisis</span>
+                  <span className="text-sky-200">{character.stats.bravery}%</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2">
+                <div className="w-full bg-[#0b1636] rounded-full h-2 overflow-hidden border border-[#193275]/40">
                   <div className="bg-amber-500 h-full rounded-full" style={{ width: `${character.stats.bravery}%` }} />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between font-semibold mb-1">
-                  <span className="text-slate-600">Gadget Handling</span>
-                  <span className="text-slate-800">{character.stats.gadgetSkill}%</span>
+                  <span className="text-slate-300">Gadget Handling</span>
+                  <span className="text-sky-200">{character.stats.gadgetSkill}%</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2">
+                <div className="w-full bg-[#0b1636] rounded-full h-2 overflow-hidden border border-[#193275]/40">
                   <div className="bg-purple-500 h-full rounded-full" style={{ width: `${character.stats.gadgetSkill}%` }} />
                 </div>
               </div>
@@ -149,24 +149,24 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
 
           {/* Voice Actors & Signature Gadgets */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                <Mic className="w-3.5 h-3.5 text-sky-500" />
+            <div className="bg-[#0b1636] p-4 rounded-2xl border border-[#193275]/60">
+              <div className="flex items-center gap-2 text-xs font-bold text-white uppercase tracking-wider mb-2">
+                <Mic className="w-3.5 h-3.5 text-sky-400" />
                 <span>Iconic Voice Actors</span>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-slate-300 leading-relaxed font-medium">
                 {character.voiceActors}
               </p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <div className="bg-[#0b1636] p-4 rounded-2xl border border-[#193275]/60">
+              <div className="flex items-center gap-2 text-xs font-bold text-white uppercase tracking-wider mb-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span>Signature Gadgets</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {character.signatureGadgets.map((gadget) => (
-                  <span key={gadget} className="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-semibold text-slate-700">
+                  <span key={gadget} className="px-2 py-0.5 bg-[#070f26] border border-[#193275]/70 rounded text-[11px] font-semibold text-sky-200">
                     {gadget}
                   </span>
                 ))}
@@ -175,14 +175,14 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
           </div>
 
           {/* Voting Action Bar */}
-          <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="pt-4 border-t border-[#193275]/60 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
-              <span className="text-xs text-slate-400 font-medium">Current Community Standing</span>
+              <span className="text-xs text-sky-300/70 font-medium">Current Community Standing</span>
               <div className="flex items-baseline gap-2 mt-0.5">
-                <span className="text-xl font-black text-slate-800 font-mono">
+                <span className="text-xl font-black text-white font-mono">
                   {charVotes.toLocaleString()} votes
                 </span>
-                <span className="text-xs font-bold text-sky-600">({percentage}% of total)</span>
+                <span className="text-xs font-bold text-sky-400">({percentage}% of total)</span>
               </div>
             </div>
 

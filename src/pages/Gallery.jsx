@@ -66,28 +66,28 @@ export default function Gallery() {
   const currentItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#070f26]">
       {/* Hero Header */}
-      <section className="bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-600 text-white py-12 px-4 sm:px-6 lg:px-8 shadow-md">
+      <section className="bg-gradient-to-r from-[#040817] via-[#071333] to-[#0b1b44] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#193275]/60 shadow-lg">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-xs text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#070f26]/80 border border-[#193275]/70 backdrop-blur-xs text-sky-300 text-xs font-semibold">
               <Image className="w-3.5 h-3.5 text-amber-300" />
               <span>Visual Archive & 4K Wallpapers</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight text-white">
               Official Media Gallery
             </h1>
-            <p className="text-sky-100 text-sm sm:text-base max-w-2xl font-medium">
+            <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-medium">
               Explore high-resolution art, original anime production cells, 22nd-century gadget schematics, and desktop wallpapers celebrating Fujiko F. Fujio’s legendary universe.
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-center min-w-[140px]">
+          <div className="bg-[#0b1636]/80 backdrop-blur-md rounded-2xl p-4 border border-[#193275]/70 text-center min-w-[140px]">
             <span className="block text-2xl sm:text-3xl font-black font-display text-amber-300">
               {galleryData.length}+
             </span>
-            <span className="text-xs text-sky-100 font-semibold">Curated Artworks</span>
+            <span className="text-xs text-sky-300/80 font-semibold">Curated Artworks</span>
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function Gallery() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         {/* Filter Navigation */}
-        <div className="flex items-center justify-between flex-wrap gap-4 border-b border-slate-200 pb-5">
+        <div className="flex items-center justify-between flex-wrap gap-4 border-b border-[#193275]/60 pb-5">
           <div className="flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
             {categories.map((cat) => (
               <button
@@ -107,7 +107,7 @@ export default function Gallery() {
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   activeCategory === cat
                     ? "bg-sky-500 text-white shadow-md shadow-sky-500/20"
-                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+                    : "bg-[#0b1636] text-slate-300 border border-[#193275]/60 hover:bg-[#0f1f4b]"
                 }`}
               >
                 {cat}
@@ -115,7 +115,7 @@ export default function Gallery() {
             ))}
           </div>
 
-          <span className="text-xs font-bold text-slate-500">
+          <span className="text-xs font-bold text-sky-300/80">
             Showing {filteredItems.length} items
           </span>
         </div>
@@ -126,7 +126,7 @@ export default function Gallery() {
             <article
               key={item.id}
               onClick={() => openLightbox(index)}
-              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-card transition-all duration-300 cursor-pointer flex flex-col"
+              className="group bg-[#0b1636] rounded-3xl border border-[#193275]/70 hover:border-sky-400/60 overflow-hidden shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
             >
               {/* Image Frame */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
@@ -136,7 +136,7 @@ export default function Gallery() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/20 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
@@ -150,7 +150,7 @@ export default function Gallery() {
 
                 {/* Hover zoom icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                  <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md text-slate-800 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                  <div className="w-12 h-12 rounded-full bg-[#070f26]/90 border border-[#193275] backdrop-blur-md text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
                     <Maximize2 className="w-5 h-5" />
                   </div>
                 </div>
@@ -159,10 +159,10 @@ export default function Gallery() {
               {/* Card Footer */}
               <div className="p-4 flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <h3 className="text-sm font-display font-bold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-1">
+                  <h3 className="text-sm font-display font-bold text-white group-hover:text-sky-300 transition-colors line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-slate-500 line-clamp-1">
+                  <p className="text-[11px] text-slate-400 line-clamp-1">
                     {item.caption}
                   </p>
                 </div>
@@ -172,8 +172,8 @@ export default function Gallery() {
                   onClick={(e) => handleLike(item.id, e)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     likedMap[item.id]
-                      ? "bg-rose-50 text-rose-600"
-                      : "bg-slate-100 text-slate-600 hover:bg-rose-50 hover:text-rose-600"
+                      ? "bg-rose-950/50 text-rose-400 border border-rose-500/40"
+                      : "bg-[#070f26] text-slate-300 border border-[#193275]/60 hover:bg-rose-950/30 hover:text-rose-400"
                   }`}
                 >
                   <Heart
@@ -240,24 +240,24 @@ export default function Gallery() {
             />
 
             {/* Lightbox Information Bar */}
-            <div className="mt-4 w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-4 w-full bg-[#070f26]/90 backdrop-blur-md border border-[#193275]/80 rounded-2xl p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left space-y-1">
                 <div className="flex items-center justify-center sm:justify-start gap-2">
                   <span className="px-2.5 py-0.5 rounded bg-sky-500 text-xs font-bold font-mono">
                     {currentItem.category}
                   </span>
-                  <span className="text-xs text-sky-200 font-mono">
+                  <span className="text-xs text-sky-300 font-mono">
                     {currentItem.resolution}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold font-display">{currentItem.title}</h3>
+                <h3 className="text-lg font-bold font-display text-white">{currentItem.title}</h3>
                 <p className="text-xs text-slate-300 max-w-xl">{currentItem.caption}</p>
               </div>
 
               <div className="flex items-center gap-3">
                 <button
                   onClick={(e) => handleLike(currentItem.id, e)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0b1636] hover:bg-[#14275e] text-white border border-[#193275]/70 text-xs font-bold transition-all"
                 >
                   <Heart className={`w-4 h-4 ${likedMap[currentItem.id] ? "fill-rose-500 text-rose-500" : ""}`} />
                   <span>{likes[currentItem.id] || 0}</span>

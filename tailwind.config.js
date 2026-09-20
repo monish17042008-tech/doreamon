@@ -24,6 +24,15 @@ export default {
           'bell-bright': '#fbbf24',
           door: '#ec4899',
           'door-frame': '#f472b6',
+        },
+        navy: {
+          950: '#040817', // Deepest background
+          900: '#070f26', // Base dark navy background
+          850: '#0b1636', // Section / panel background
+          800: '#0f1f4b', // Elevated card background
+          750: '#14275e', // Hover card background
+          700: '#193275', // Border light
+          600: '#23449c', // Accent border
         }
       },
       fontFamily: {
