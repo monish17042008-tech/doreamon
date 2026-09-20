@@ -1,3 +1,7 @@
+import treetopPicnicImg from "../assets/gallery/treetop-picnic-adventure.jpg";
+import spaceblazerCowboyImg from "../assets/gallery/spaceblazer-cowboy-frontier.jpg";
+import doreamonWhistlingImg from "../assets/gallery/doreamon-whistling-charm.jpg";
+import nobitaWaveImg from "../assets/gallery/nobita-cheerful-wave.jpg";
 import takecopterImg from "../assets/gallery/takecopter-sky-adventure.jpg";
 import rainyDayUmbrellaImg from "../assets/gallery/rainy-day-umbrella.jpg";
 import nobitaRoomGadgetImg from "../assets/gallery/nobita-room-gadget-chaos.jpg";
@@ -5,6 +9,50 @@ import nobitaShizukaPromiseImg from "../assets/gallery/nobita-shizuka-promise.jp
 import nobitaDeterminedStudyImg from "../assets/gallery/nobita-determined-study.jpg";
 
 export const galleryData = [
+  {
+    id: "gal-treetop-picnic",
+    title: "Treetop Canopy Picnic Adventure",
+    category: "Movies",
+    src: treetopPicnicImg,
+    thumbnail: treetopPicnicImg,
+    caption: "Doraemon, Nobita, Shizuka, Gian, Suneo, and Peko enjoying a tasty pancake feast atop a colossal jungle tree canopy.",
+    resolution: "1080 x 1920",
+    date: "2024",
+    likes: 4120
+  },
+  {
+    id: "gal-spaceblazer-frontier",
+    title: "Spaceblazer Galactic Frontiers",
+    category: "Movies",
+    src: spaceblazerCowboyImg,
+    thumbnail: spaceblazerCowboyImg,
+    caption: "Cowboy Doraemon and Nobita embarking on a planetary expedition with Dorami, Chammy, and friends beneath the crimson moon.",
+    resolution: "1920 x 1080",
+    date: "2024",
+    likes: 4350
+  },
+  {
+    id: "gal-doreamon-whistle",
+    title: "Whistling Doreamon Emblem",
+    category: "Characters",
+    src: doreamonWhistlingImg,
+    thumbnail: doreamonWhistlingImg,
+    caption: "Doreamon's charming whistling pose featuring his classic golden bell and the Doreamon insignia.",
+    resolution: "1080 x 1080",
+    date: "2024",
+    likes: 3890
+  },
+  {
+    id: "gal-nobita-wave",
+    title: "Nobita's Cheerful Greeting",
+    category: "Characters",
+    src: nobitaWaveImg,
+    thumbnail: nobitaWaveImg,
+    caption: "Nobita walking with confidence and a cheerful wave, ready for another unforgettable day of surprises.",
+    resolution: "1080 x 1920",
+    date: "2024",
+    likes: 3460
+  },
   {
     id: "gal-takecopter-adventure",
     title: "Take-copter Sky Patrol",
