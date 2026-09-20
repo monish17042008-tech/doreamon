@@ -1,3 +1,5 @@
+import shizukaPencilSketchImg from "../assets/gallery/shizuka-pencil-sketch.jpg";
+import shizukaCheerfulWaveImg from "../assets/gallery/shizuka-cheerful-wave.jpg";
 import gianConfidentGrinImg from "../assets/gallery/gian-confident-grin.jpg";
 import gianCheerfulWaveImg from "../assets/gallery/gian-cheerful-wave.jpg";
 import gianKnuckleClenchImg from "../assets/gallery/gian-knuckle-clench.jpg";
@@ -17,6 +19,28 @@ import nobitaShizukaPromiseImg from "../assets/gallery/nobita-shizuka-promise.jp
 import nobitaDeterminedStudyImg from "../assets/gallery/nobita-determined-study.jpg";
 
 export const galleryData = [
+  {
+    id: "gal-shizuka-pencil-sketch",
+    title: "Shizuka Hand-Drawn Pencil Art",
+    category: "Characters",
+    src: shizukaPencilSketchImg,
+    thumbnail: shizukaPencilSketchImg,
+    caption: "A masterfully shaded graphite pencil illustration capturing Shizuka Minamoto's gentle expression.",
+    resolution: "1080 x 1920",
+    date: "2024",
+    likes: 3820
+  },
+  {
+    id: "gal-shizuka-cheerful-wave",
+    title: "Shizuka's Sweet Greeting",
+    category: "Characters",
+    src: shizukaCheerfulWaveImg,
+    thumbnail: shizukaCheerfulWaveImg,
+    caption: "Shizuka Minamoto waving gracefully with a warm and friendly smile in her signature pink outfit.",
+    resolution: "1080 x 1920",
+    date: "2024",
+    likes: 3590
+  },
   {
     id: "gal-gian-confident-grin",
     title: "Gian's Mischievous Grin",
