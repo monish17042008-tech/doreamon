@@ -11,17 +11,6 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-gradient-to-b from-[#060e26] via-[#091538] to-[#040817] text-white overflow-hidden pt-12 pb-8 border-t border-[#193275]/80">
-      {/* Doraemon Bell Background Watermark */}
-      <div className="absolute right-[-40px] bottom-[-40px] opacity-10 pointer-events-none select-none">
-        <svg width="260" height="260" viewBox="0 0 100 100" fill="currentColor">
-          <circle cx="50" cy="50" r="45" />
-          <line x1="15" y1="48" x2="85" y2="48" stroke="#000" strokeWidth="6" />
-          <line x1="20" y1="56" x2="80" y2="56" stroke="#000" strokeWidth="6" />
-          <circle cx="50" cy="68" r="10" stroke="#000" strokeWidth="5" />
-          <line x1="50" y1="78" x2="50" y2="92" stroke="#000" strokeWidth="6" />
-        </svg>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#193275]/70">
           {/* Brand Info */}
