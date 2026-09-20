@@ -74,10 +74,10 @@ export default function Navbar() {
 
             <div className="flex flex-col">
               <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-800 leading-none">
-                Doraemon<span className="text-sky-500">World</span>
+                Doreamon
               </span>
               <span className="text-[10px] text-sky-600 font-semibold tracking-wider uppercase mt-0.5">
-                ドラえもんワールド
+                ドラえもん
               </span>
             </div>
           </Link>

@@ -41,7 +41,7 @@ export default function Footer() {
             </div>
             <div>
               <h3 className="text-xl font-display font-extrabold tracking-tight">
-                Doraemon World
+                Doreamon
               </h3>
               <p className="text-xs text-sky-100 font-medium">
                 Small gadgets... Big dreams...
@@ -122,12 +122,12 @@ export default function Footer() {
         {/* Legal Disclaimer & Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200">
           <p className="text-center sm:text-left leading-relaxed">
-            Doraemon World is an unofficial fan portal and educational tribute. All trademarks, characters, and artwork belong to © Fujiko F. Fujio, Shin-Ei Animation, TV Asahi, and Toho Co., Ltd.
+            Doreamon is an unofficial fan portal and educational tribute. All trademarks, characters, and artwork belong to © Fujiko F. Fujio, Shin-Ei Animation, TV Asahi, and Toho Co., Ltd.
           </p>
           <div className="flex items-center gap-1.5 flex-shrink-0 text-sky-100 font-medium">
             <span>Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-rose-300 fill-rose-300 animate-pulse" />
-            <span>for Doraemon fans worldwide</span>
+            <span>for Doreamon fans worldwide</span>
           </div>
         </div>
       </div>

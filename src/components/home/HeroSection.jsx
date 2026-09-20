@@ -39,9 +39,8 @@ export default function HeroSection({ onOpenSearch }) {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tight leading-[1.1] drop-shadow-md">
               Welcome to <br className="hidden sm:inline" />
-              <span className="text-sky-950">Doraemon</span>{" "}
-              <span className="relative inline-block text-amber-300 drop-shadow">
-                World
+              <span className="relative inline-block text-sky-950 drop-shadow">
+                Doreamon
                 {/* Mini Bell Icon over title */}
                 <span className="absolute -top-3 -right-6 hidden sm:inline-block">
                   <svg width="28" height="28" viewBox="0 0 100 100">
