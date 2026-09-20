@@ -1,0 +1,21 @@
+/* Doraemon World Custom Component Specific Styles */
+
+/* Subtle glassmorphism surface */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 242, 254, 0.8);
+}
+
+/* 3D Canvas wrapper styles */
+.canvas-container {
+  touch-action: none;
+  user-select: none;
+}
+
+/* Comic dot pattern background */
+.bg-comic-dots {
+  background-image: radial-gradient(#bae6fd 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
