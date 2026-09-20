@@ -1,17 +1,13 @@
-import { charactersData } from "../data/charactersData";
-import { db } from "./firebase";
+import { charactersData } from "../data/charactersData.js";
+import { rtdb } from "./firebase.js";
 import {
-  doc,
-  setDoc,
-  increment,
-  onSnapshot,
-  collection,
-  addDoc,
-  query,
-  orderBy,
-  limit,
-  serverTimestamp
-} from "firebase/firestore";
+  ref,
+  get,
+  set,
+  push,
+  onValue,
+  runTransaction
+} from "firebase/database";
 
 const VOTES_STORAGE_KEY = "doraemon_character_votes_v2";
 const LEADERBOARD_STORAGE_KEY = "doraemon_sky_catch_leaderboard_v2";
@@ -36,12 +32,30 @@ const DEFAULT_LEADERBOARD = [
   { id: "score-7", playerName: "Nobita_NapHero", score: 650, dorayakis: 28, rank: 7, date: "2024-02-27", badge: "Novice" }
 ];
 
-let isVotesFirestoreListening = false;
-let isLeaderboardFirestoreListening = false;
+let isVotesListening = false;
+let isLeaderboardListening = false;
 
 export const storageService = {
-  // Connection state
-  isFirestoreActive: Boolean(db),
+  // Check live connection
+  async checkConnection() {
+    try {
+      const start = Date.now();
+      const votesRef = ref(rtdb, "votes");
+      await get(votesRef);
+      const latency = Date.now() - start;
+      return {
+        connected: true,
+        database: "Firebase Realtime Database",
+        url: "https://doreamon-web-default-rtdb.firebaseio.com",
+        latency: `${latency}ms`
+      };
+    } catch (err) {
+      return {
+        connected: false,
+        error: err.message
+      };
+    }
+  },
 
   // --- CHARACTER VOTES ---
   getVotes() {
@@ -58,7 +72,7 @@ export const storageService = {
     return defaults;
   },
 
-  saveVotes(votes, syncToFirestore = false) {
+  saveVotes(votes, syncToRemote = false) {
     try {
       localStorage.setItem(VOTES_STORAGE_KEY, JSON.stringify(votes));
       window.dispatchEvent(new CustomEvent("doraemon_votes_updated", { detail: votes }));
@@ -66,10 +80,9 @@ export const storageService = {
       console.warn("Failed to persist votes locally:", e);
     }
 
-    if (syncToFirestore && db) {
-      const votesDocRef = doc(db, "character_votes", "totals");
-      setDoc(votesDocRef, votes, { merge: true }).catch((err) => {
-        console.warn("Firebase Firestore vote sync notice (check Firestore rules if offline):", err.message);
+    if (syncToRemote && rtdb) {
+      set(ref(rtdb, "votes"), votes).catch((err) => {
+        console.warn("Firebase votes sync notice:", err.message);
       });
     }
   },
@@ -82,18 +95,16 @@ export const storageService = {
       [characterId]: updatedCount
     };
 
-    // Immediate optimistic local update
+    // Optimistic local update
     this.saveVotes(updatedVotes, false);
 
-    // Sync incremental update to Firebase Firestore
-    if (db) {
-      const votesDocRef = doc(db, "character_votes", "totals");
-      setDoc(
-        votesDocRef,
-        { [characterId]: increment(1) },
-        { merge: true }
-      ).catch((err) => {
-        console.warn("Firebase vote increment error:", err.message);
+    // Atomic transaction on Firebase Realtime Database
+    if (rtdb) {
+      const voteItemRef = ref(rtdb, `votes/${characterId}`);
+      runTransaction(voteItemRef, (current) => {
+        return (current || 0) + 1;
+      }).catch((err) => {
+        console.warn("Firebase vote transaction error:", err.message);
       });
     }
 
@@ -105,40 +116,40 @@ export const storageService = {
     const localHandler = (event) => callback(event.detail);
     window.addEventListener("doraemon_votes_updated", localHandler);
 
-    // 2. Start Firebase Firestore real-time listener if not already active
-    let unsubFirestore = null;
-    if (db && !isVotesFirestoreListening) {
-      isVotesFirestoreListening = true;
+    // 2. Start Firebase Realtime Database listener
+    let unsubRemote = null;
+    if (rtdb && !isVotesListening) {
+      isVotesListening = true;
       try {
-        const votesDocRef = doc(db, "character_votes", "totals");
-        unsubFirestore = onSnapshot(
-          votesDocRef,
-          (docSnap) => {
-            if (docSnap.exists()) {
-              const remoteVotes = docSnap.data();
-              const merged = { ...this.getVotes(), ...remoteVotes };
+        const votesRef = ref(rtdb, "votes");
+        unsubRemote = onValue(
+          votesRef,
+          (snapshot) => {
+            const data = snapshot.val();
+            if (data && typeof data === "object") {
+              const merged = { ...this.getVotes(), ...data };
               this.saveVotes(merged, false);
               callback(merged);
             } else {
-              // Pre-seed Firestore if collection is empty
+              // Seed initial votes in database if empty
               const initial = this.getVotes();
-              setDoc(votesDocRef, initial, { merge: true }).catch(() => {});
+              set(votesRef, initial).catch(() => {});
             }
           },
           (error) => {
-            console.warn("Firebase character votes subscription notice:", error.message);
+            console.warn("Firebase votes subscription notice:", error.message);
           }
         );
       } catch (err) {
-        console.warn("Could not attach Firestore votes listener:", err);
+        console.warn("Could not attach RTDB votes listener:", err);
       }
     }
 
     return () => {
       window.removeEventListener("doraemon_votes_updated", localHandler);
-      if (unsubFirestore) {
-        unsubFirestore();
-        isVotesFirestoreListening = false;
+      if (unsubRemote) {
+        unsubRemote();
+        isVotesListening = false;
       }
     };
   },
@@ -194,18 +205,18 @@ export const storageService = {
     // Optimistic local update
     this.saveLeaderboard(combined);
 
-    // Sync score to Firebase Firestore
-    if (db) {
-      const leaderboardCol = collection(db, "leaderboard");
-      addDoc(leaderboardCol, {
+    // Save to Firebase Realtime Database
+    if (rtdb) {
+      const leaderboardRef = ref(rtdb, "leaderboard");
+      push(leaderboardRef, {
         playerName: newEntry.playerName,
         score: newEntry.score,
         dorayakis: newEntry.dorayakis,
         date: newEntry.date,
         badge: newEntry.badge,
-        createdAt: serverTimestamp()
+        createdAt: Date.now()
       }).catch((err) => {
-        console.warn("Firebase score submit notice:", err.message);
+        console.warn("Firebase score push notice:", err.message);
       });
     }
 
@@ -217,32 +228,35 @@ export const storageService = {
     const localHandler = (event) => callback(event.detail);
     window.addEventListener("doraemon_leaderboard_updated", localHandler);
 
-    // 2. Start Firebase Firestore real-time listener if not already active
-    let unsubFirestore = null;
-    if (db && !isLeaderboardFirestoreListening) {
-      isLeaderboardFirestoreListening = true;
+    // 2. Start Firebase Realtime Database listener
+    let unsubRemote = null;
+    if (rtdb && !isLeaderboardListening) {
+      isLeaderboardListening = true;
       try {
-        const leaderboardCol = collection(db, "leaderboard");
-        const q = query(leaderboardCol, orderBy("score", "desc"), limit(15));
-
-        unsubFirestore = onSnapshot(
-          q,
+        const leaderboardRef = ref(rtdb, "leaderboard");
+        unsubRemote = onValue(
+          leaderboardRef,
           (snapshot) => {
-            if (!snapshot.empty) {
-              const remoteList = snapshot.docs.map((docSnap, index) => {
-                const data = docSnap.data();
-                return {
-                  id: docSnap.id,
-                  playerName: data.playerName || "Anonymous Pilot",
-                  score: data.score || 0,
-                  dorayakis: data.dorayakis || 0,
-                  date: data.date || "",
-                  badge: data.badge || "Pilot",
-                  rank: index + 1
-                };
+            const val = snapshot.val();
+            if (val && typeof val === "object") {
+              const entries = Object.keys(val).map((k) => ({
+                id: k,
+                ...val[k]
+              }))
+              .sort((a, b) => (b.score || 0) - (a.score || 0))
+              .slice(0, 15)
+              .map((item, index) => ({
+                ...item,
+                rank: index + 1
+              }));
+
+              this.saveLeaderboard(entries);
+              callback(entries);
+            } else {
+              // Seed initial leaderboard if empty
+              DEFAULT_LEADERBOARD.forEach((item) => {
+                push(leaderboardRef, item).catch(() => {});
               });
-              this.saveLeaderboard(remoteList);
-              callback(remoteList);
             }
           },
           (error) => {
@@ -250,15 +264,15 @@ export const storageService = {
           }
         );
       } catch (err) {
-        console.warn("Could not attach Firestore leaderboard listener:", err);
+        console.warn("Could not attach RTDB leaderboard listener:", err);
       }
     }
 
     return () => {
       window.removeEventListener("doraemon_leaderboard_updated", localHandler);
-      if (unsubFirestore) {
-        unsubFirestore();
-        isLeaderboardFirestoreListening = false;
+      if (unsubRemote) {
+        unsubRemote();
+        isLeaderboardListening = false;
       }
     };
   }

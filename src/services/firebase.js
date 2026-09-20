@@ -1,11 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import { getDatabase } from "firebase/database";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
+// Your web app's Firebase configuration with active Realtime Database URL
+export const firebaseConfig = {
   apiKey: "AIzaSyDfpGce9G3qGyMyyDERv90X5HJ4-OrMBtU",
   authDomain: "doreamon-web.firebaseapp.com",
+  databaseURL: "https://doreamon-web-default-rtdb.firebaseio.com",
   projectId: "doreamon-web",
   storageBucket: "doreamon-web.firebasestorage.app",
   messagingSenderId: "1043071856508",
@@ -16,10 +18,13 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-// Initialize Cloud Firestore Database
+// Initialize Firebase Realtime Database
+export const rtdb = getDatabase(app);
+
+// Initialize Cloud Firestore Database (if activated)
 export const db = getFirestore(app);
 
-// Initialize Analytics (with safe check for unsupported environments/ad-blockers)
+// Initialize Analytics safely
 export let analytics = null;
 if (typeof window !== "undefined") {
   isSupported()
@@ -29,6 +34,6 @@ if (typeof window !== "undefined") {
       }
     })
     .catch((err) => {
-      console.warn("Firebase Analytics could not be initialized:", err);
+      console.warn("Firebase Analytics notice:", err);
     });
 }
