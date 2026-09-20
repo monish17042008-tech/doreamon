@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import AirplaneBackToTop from "./components/common/AirplaneBackToTop";
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Episodes from "./pages/Episodes";
@@ -37,6 +38,9 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
+
+      {/* Floating Midnight Blue Airplane Back to Top */}
+      <AirplaneBackToTop />
 
       {/* Footer */}
       <Footer />
