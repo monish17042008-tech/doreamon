@@ -39,7 +39,7 @@ export default function DailyGadgetCard() {
             {gadget.name}
           </h3>
           <p className="text-xs sm:text-sm font-semibold text-sky-600 mt-0.5">
-            {gadget.japaneseName} • {gadget.category}
+            {gadget.category}
           </p>
         </div>
 

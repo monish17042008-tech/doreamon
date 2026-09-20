@@ -77,7 +77,7 @@ export default function Navbar() {
                 Doreamon
               </span>
               <span className="text-[10px] text-sky-600 font-semibold tracking-wider uppercase mt-0.5">
-                ドラえもん
+                Official Portal
               </span>
             </div>
           </Link>

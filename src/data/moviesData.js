@@ -2,7 +2,6 @@ export const moviesData = [
   {
     id: "mov-1980",
     title: "Nobita's Dinosaur",
-    japaneseTitle: "ドラえもん のび太の恐竜",
     year: 1980,
     decade: "1980s",
     releaseDate: "March 15, 1980",
@@ -23,7 +22,6 @@ export const moviesData = [
   {
     id: "mov-1985",
     title: "Nobita's Little Star Wars",
-    japaneseTitle: "ドラえもん のび太の宇宙小戦争",
     year: 1985,
     decade: "1980s",
     releaseDate: "March 16, 1985",
@@ -43,7 +41,6 @@ export const moviesData = [
   {
     id: "mov-1986",
     title: "Nobita and the Steel Troops",
-    japaneseTitle: "ドラえもん のび太と鉄人兵団",
     year: 1986,
     decade: "1980s",
     releaseDate: "March 15, 1986",
@@ -63,7 +60,6 @@ export const moviesData = [
   {
     id: "mov-1993",
     title: "Nobita and the Tin Labyrinth",
-    japaneseTitle: "ドラえもん のび太とブリキの迷宮",
     year: 1993,
     decade: "1990s",
     releaseDate: "March 6, 1993",
@@ -82,7 +78,6 @@ export const moviesData = [
   {
     id: "mov-2011",
     title: "Nobita and the New Steel Troops ~Angel Wings~",
-    japaneseTitle: "ドラえもん 新・のび太と鉄人兵団 〜はばたけ 天使たち〜",
     year: 2011,
     decade: "2010s",
     releaseDate: "March 5, 2011",
@@ -102,7 +97,6 @@ export const moviesData = [
   {
     id: "mov-2014",
     title: "Stand by Me Doraemon",
-    japaneseTitle: "STAND BY ME ドラえもん",
     year: 2014,
     decade: "2010s",
     releaseDate: "August 8, 2014",
@@ -123,7 +117,6 @@ export const moviesData = [
   {
     id: "mov-2020",
     title: "Stand by Me Doraemon 2",
-    japaneseTitle: "STAND BY ME ドラえもん 2",
     year: 2020,
     decade: "2020s",
     releaseDate: "November 20, 2020",
@@ -143,7 +136,6 @@ export const moviesData = [
   {
     id: "mov-2023",
     title: "Nobita's Sky Utopia",
-    japaneseTitle: "ドラえもん のび太と空の理想郷（ユートピア）",
     year: 2023,
     decade: "2020s",
     releaseDate: "March 3, 2023",
@@ -163,7 +155,6 @@ export const moviesData = [
   {
     id: "mov-2024",
     title: "Nobita's Earth Symphony",
-    japaneseTitle: "ドラえもん のび太の地球交響楽（シンフォニー）",
     year: 2024,
     decade: "2020s",
     releaseDate: "March 1, 2024",

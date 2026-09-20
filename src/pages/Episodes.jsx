@@ -30,7 +30,6 @@ export default function Episodes() {
       const matchesSearch =
         !q ||
         ep.title.toLowerCase().includes(q) ||
-        ep.japaneseTitle.includes(q) ||
         ep.synopsis.toLowerCase().includes(q) ||
         ep.featuredGadgets.some((g) => g.toLowerCase().includes(q));
 

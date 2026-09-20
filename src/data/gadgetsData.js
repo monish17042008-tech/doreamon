@@ -2,7 +2,6 @@ export const gadgetsData = [
   {
     id: "anywhere-door",
     name: "Anywhere Door",
-    japaneseName: "どこでもドア (Dokodemo Door)",
     category: "Spatial Mobility",
     firstAppearance: "1970 Manga / 1979 Anime Ep. 2",
     priceIn22ndCentury: "640,000 Yen",
@@ -15,7 +14,6 @@ export const gadgetsData = [
   {
     id: "take-copter",
     name: "Take-copter (Bamboo-copter)",
-    japaneseName: "タケコプター (Takekoputā)",
     category: "Flight & Aerial",
     firstAppearance: "1970 Manga / Ep. 1",
     priceIn22ndCentury: "15,000 Yen",
@@ -28,7 +26,6 @@ export const gadgetsData = [
   {
     id: "time-machine",
     name: "Time Machine",
-    japaneseName: "タイムマシン (Taimu Mashin)",
     category: "Temporal Navigation",
     firstAppearance: "1970 Manga / Ep. 1",
     priceIn22ndCentury: "1,200,000 Yen (Used model)",
@@ -41,7 +38,6 @@ export const gadgetsData = [
   {
     id: "memory-bread",
     name: "Memory Bread (Anki-pan)",
-    japaneseName: "アンキパン",
     category: "Cognitive Enhancement",
     firstAppearance: "Manga Vol. 2 / Ep. 5",
     priceIn22ndCentury: "50 Yen per slice",
@@ -54,7 +50,6 @@ export const gadgetsData = [
   {
     id: "translation-konjac",
     name: "Translation Konjac",
-    japaneseName: "ほんやくコンニャク",
     category: "Linguistics",
     firstAppearance: "Manga Vol. 12",
     priceIn22ndCentury: "3,000 Yen per block",
@@ -67,7 +62,6 @@ export const gadgetsData = [
   {
     id: "small-light",
     name: "Small Light (Shrink Ray)",
-    japaneseName: "スモールライト",
     category: "Atomic Compression",
     firstAppearance: "Manga Vol. 8",
     priceIn22ndCentury: "40,000 Yen",

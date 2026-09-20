@@ -123,7 +123,6 @@ export default function CharacterRankingBar({ characters, votes }) {
                     #{index + 1}
                   </span>
                   <span className="text-slate-800 font-bold">{char.name}</span>
-                  <span className="text-slate-400 hidden sm:inline">{char.japaneseName}</span>
                 </div>
                 <div className="flex items-center gap-3 font-mono">
                   <span className="text-slate-500 text-[11px]">{charVotes.toLocaleString()} votes</span>

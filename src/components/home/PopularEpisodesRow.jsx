@@ -125,9 +125,6 @@ export default function PopularEpisodesRow() {
                 <h3 className="text-xl font-bold text-white mt-1">
                   {selectedEpisode.title}
                 </h3>
-                <p className="text-xs text-sky-200 font-serif">
-                  {selectedEpisode.japaneseTitle}
-                </p>
               </div>
             </div>
 

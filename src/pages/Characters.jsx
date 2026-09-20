@@ -42,7 +42,6 @@ export default function Characters() {
   const filteredCharacters = charactersData.filter((c) => {
     const matchesSearch =
       c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.japaneseName.includes(searchQuery) ||
       c.bio.toLowerCase().includes(searchQuery.toLowerCase());
 
     const matchesRole =

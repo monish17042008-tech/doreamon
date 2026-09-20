@@ -71,9 +71,6 @@ export default function EpisodeCard({ episode, onSelect }) {
           <h3 className="text-base font-bold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-1">
             {episode.title}
           </h3>
-          <p className="text-xs text-slate-400 font-serif mt-0.5 line-clamp-1">
-            {episode.japaneseTitle}
-          </p>
 
           <p className="text-xs text-slate-600 leading-relaxed mt-3 line-clamp-2">
             {episode.synopsis}

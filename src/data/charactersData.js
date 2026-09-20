@@ -2,7 +2,6 @@ export const charactersData = [
   {
     id: "doraemon",
     name: "Doraemon",
-    japaneseName: "ドラえもん",
     role: "Cat-Type Robot from the 22nd Century",
     birthDate: "September 3, 2112",
     weight: "129.3 kg (285 lbs)",
@@ -15,7 +14,7 @@ export const charactersData = [
     weakness: "Mice (lost his ears to a robotic mouse, causing extreme phobia)",
     voiceActors: "Nobuyo Oyama (1979–2005), Wasabi Mizuta (2005–present)",
     bestFriends: ["Nobita Nobi", "Dorami", "Shizuka Minamoto"],
-    signatureGadgets: ["Anywhere Door (Dokodemo Door)", "Take-copter (Bamboo-copter)", "Time Machine", "Small Light"],
+    signatureGadgets: ["Anywhere Door", "Take-copter", "Time Machine", "Small Light"],
     memorableQuote: "Thinking you're no good and giving up without trying is the worst thing you could do!",
     stats: {
       kindness: 98,
@@ -28,7 +27,6 @@ export const charactersData = [
   {
     id: "nobita",
     name: "Nobita Nobi",
-    japaneseName: "野比 のび太",
     role: "Elementary School Student & Heart of the Group",
     birthDate: "August 7",
     weight: "30 kg",
@@ -54,7 +52,6 @@ export const charactersData = [
   {
     id: "shizuka",
     name: "Shizuka Minamoto",
-    japaneseName: "源 静香",
     role: "Gentle Classmate & Nobita's Future Wife",
     birthDate: "May 8",
     weight: "32 kg",
@@ -80,7 +77,6 @@ export const charactersData = [
   {
     id: "gian",
     name: "Takeshi 'Gian' Goda",
-    japaneseName: "剛田 武 (ジャイアン)",
     role: "Neighborhood Strongman & Aspiring Singer",
     birthDate: "June 15",
     weight: "60 kg",
@@ -106,7 +102,6 @@ export const charactersData = [
   {
     id: "suneo",
     name: "Suneo Honekawa",
-    japaneseName: "骨川 スネ夫",
     role: "Affluent Technophile & Master Flatterer",
     birthDate: "February 29",
     weight: "28 kg",
@@ -132,7 +127,6 @@ export const charactersData = [
   {
     id: "dorami",
     name: "Dorami",
-    japaneseName: "ドラミ",
     role: "Doraemon's Younger Sister & Class-A Housekeeping Robot",
     birthDate: "December 2, 2114",
     weight: "91 kg",
@@ -158,7 +152,6 @@ export const charactersData = [
   {
     id: "dekisugi",
     name: "Hidetoshi Dekisugi",
-    japaneseName: "出木杉 英才",
     role: "Honor Student & Intellectual Prodigy",
     birthDate: "April 15",
     weight: "35 kg",
@@ -184,7 +177,6 @@ export const charactersData = [
   {
     id: "sewashi",
     name: "Sewashi Nobi",
-    japaneseName: "野比 セワシ",
     role: "Nobita's Great-Great-Grandson (22nd Century)",
     birthDate: "May 2114",
     weight: "33 kg",

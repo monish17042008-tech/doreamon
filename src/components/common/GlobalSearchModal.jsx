@@ -46,7 +46,6 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
     ? charactersData.filter(
         (c) =>
           c.name.toLowerCase().includes(q) ||
-          c.japaneseName.includes(q) ||
           c.role.toLowerCase().includes(q)
       )
     : [];
@@ -55,7 +54,6 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
     ? episodesData.filter(
         (e) =>
           e.title.toLowerCase().includes(q) ||
-          e.japaneseTitle.includes(q) ||
           e.synopsis.toLowerCase().includes(q) ||
           e.featuredGadgets.some((g) => g.toLowerCase().includes(q))
       )
@@ -74,7 +72,6 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
     ? gadgetsData.filter(
         (g) =>
           g.name.toLowerCase().includes(q) ||
-          g.japaneseName.includes(q) ||
           g.description.toLowerCase().includes(q)
       )
     : [];
@@ -169,10 +166,7 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
                             <span className="font-semibold text-sm text-slate-800 group-hover:text-sky-600">
                               {c.name}
                             </span>
-                            <span className="ml-2 text-xs text-slate-400 font-sans">
-                              {c.japaneseName}
-                            </span>
-                            <p className="text-xs text-slate-500 line-clamp-1">{c.role}</p>
+                            <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{c.role}</p>
                           </div>
                         </div>
                         <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-sky-500 transition-transform group-hover:translate-x-1" />
@@ -264,9 +258,6 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
                         <div>
                           <span className="font-semibold text-sm text-slate-800 group-hover:text-pink-600">
                             {g.name}
-                          </span>
-                          <span className="ml-2 text-xs text-slate-400">
-                            {g.japaneseName}
                           </span>
                           <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
                             {g.description}

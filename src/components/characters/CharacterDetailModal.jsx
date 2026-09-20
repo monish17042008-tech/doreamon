@@ -47,8 +47,8 @@ export default function CharacterDetailModal({ character, isOpen, onClose, votes
                   {character.badge}
                 </span>
               </div>
-              <p className="text-sm opacity-90 font-serif mt-0.5">
-                {character.japaneseName} • {character.role}
+              <p className="text-sm opacity-90 mt-0.5">
+                {character.role}
               </p>
             </div>
           </div>

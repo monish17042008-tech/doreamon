@@ -2,7 +2,6 @@ export const episodesData = [
   {
     id: "ep-001",
     title: "All the Way from the Country of the Future",
-    japaneseTitle: "未来の国からはるばると",
     era: "classic",
     season: "Season 1",
     episodeNumber: 1,
@@ -19,7 +18,6 @@ export const episodesData = [
   {
     id: "ep-002",
     title: "The Anywhere Door Adventure",
-    japaneseTitle: "どこでもドア",
     era: "classic",
     season: "Season 1",
     episodeNumber: 2,
@@ -36,7 +34,6 @@ export const episodesData = [
   {
     id: "ep-005",
     title: "Memory Bread for Exams",
-    japaneseTitle: "テストにアンキパン",
     era: "classic",
     season: "Season 1",
     episodeNumber: 5,
@@ -53,7 +50,6 @@ export const episodesData = [
   {
     id: "ep-012",
     title: "Nobita's Dinosaur (Classic Pilot)",
-    japaneseTitle: "のび太の恐竜",
     era: "classic",
     season: "Season 1",
     episodeNumber: 12,
@@ -70,7 +66,6 @@ export const episodesData = [
   {
     id: "ep-025",
     title: "The Golden Hammer of Happiness",
-    japaneseTitle: "うちでの小づち",
     era: "classic",
     season: "Season 2",
     episodeNumber: 25,
@@ -87,7 +82,6 @@ export const episodesData = [
   {
     id: "ep-101",
     title: "Goodbye, Doraemon (The Farewell)",
-    japaneseTitle: "さようならドラえもん",
     era: "classic",
     season: "Season 3",
     episodeNumber: 74,
@@ -104,7 +98,6 @@ export const episodesData = [
   {
     id: "ep-201",
     title: "The Fishing Pond in the Tatami Room",
-    japaneseTitle: "お座敷つり堀",
     era: "modern",
     season: "Season 1 (2005)",
     episodeNumber: 1,
@@ -121,7 +114,6 @@ export const episodesData = [
   {
     id: "ep-245",
     title: "The What-If Phone Booth",
-    japaneseTitle: "もしもボックス",
     era: "modern",
     season: "Season 4",
     episodeNumber: 142,
@@ -138,7 +130,6 @@ export const episodesData = [
   {
     id: "ep-310",
     title: "The Night Before Nobita's Wedding",
-    japaneseTitle: "のび太の結婚前夜",
     era: "modern",
     season: "Special Edition",
     episodeNumber: 215,
@@ -155,7 +146,6 @@ export const episodesData = [
   {
     id: "ep-402",
     title: "Earth Symphony: Prelude to Music",
-    japaneseTitle: "地球交響曲 前奏曲",
     era: "modern",
     season: "Season 19",
     episodeNumber: 780,

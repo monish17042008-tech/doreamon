@@ -43,9 +43,6 @@ export default function EpisodeModal({ episode, isOpen, onClose }) {
             <h2 className="text-xl sm:text-2xl font-display font-black text-white">
               {episode.title}
             </h2>
-            <p className="text-xs text-sky-200 font-serif">
-              {episode.japaneseTitle}
-            </p>
           </div>
         </div>
 
