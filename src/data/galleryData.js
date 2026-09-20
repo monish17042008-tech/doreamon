@@ -1,3 +1,8 @@
+import gianConfidentGrinImg from "../assets/gallery/gian-confident-grin.jpg";
+import gianCheerfulWaveImg from "../assets/gallery/gian-cheerful-wave.jpg";
+import gianKnuckleClenchImg from "../assets/gallery/gian-knuckle-clench.jpg";
+import suneoSmugSmileImg from "../assets/gallery/suneo-smug-smile.jpg";
+import suneoPoutingHoodieImg from "../assets/gallery/suneo-pouting-hoodie.jpg";
 import doreamonCaughtSnackingImg from "../assets/gallery/doreamon-caught-snacking.jpg";
 import nobitaHomeworkDeskImg from "../assets/gallery/nobita-homework-desk.jpg";
 import nobitaPortraitSmileImg from "../assets/gallery/nobita-portrait-smile.jpg";
@@ -12,6 +17,61 @@ import nobitaShizukaPromiseImg from "../assets/gallery/nobita-shizuka-promise.jp
 import nobitaDeterminedStudyImg from "../assets/gallery/nobita-determined-study.jpg";
 
 export const galleryData = [
+  {
+    id: "gal-gian-confident-grin",
+    title: "Gian's Mischievous Grin",
+    category: "Characters",
+    src: gianConfidentGrinImg,
+    thumbnail: gianConfidentGrinImg,
+    caption: "Takeshi 'Gian' Gouda showing off his classic cheeky grin in his trademark orange shirt.",
+    resolution: "1280 x 720",
+    date: "2024",
+    likes: 3120
+  },
+  {
+    id: "gal-gian-cheerful-wave",
+    title: "Gian's Energetic Wave",
+    category: "Characters",
+    src: gianCheerfulWaveImg,
+    thumbnail: gianCheerfulWaveImg,
+    caption: "Gian enthusiastically waving hello to his neighborhood friends under the evening sky.",
+    resolution: "680 x 680",
+    date: "2024",
+    likes: 2940
+  },
+  {
+    id: "gal-gian-knuckle-clench",
+    title: "Gian's Playground Power Stance",
+    category: "Characters",
+    src: gianKnuckleClenchImg,
+    thumbnail: gianKnuckleClenchImg,
+    caption: "Gian clenching his fists with authority, ready to defend the vacant lot playground.",
+    resolution: "800 x 800",
+    date: "2024",
+    likes: 3260
+  },
+  {
+    id: "gal-suneo-smug-smile",
+    title: "Suneo Honekawa Sleek Style",
+    category: "Characters",
+    src: suneoSmugSmileImg,
+    thumbnail: suneoSmugSmileImg,
+    caption: "Suneo flaunting his stylish signature hairdo and charming smile in his green polo shirt.",
+    resolution: "720 x 820",
+    date: "2024",
+    likes: 2880
+  },
+  {
+    id: "gal-suneo-pouting-hoodie",
+    title: "Suneo's Playful Pout",
+    category: "Characters",
+    src: suneoPoutingHoodieImg,
+    thumbnail: suneoPoutingHoodieImg,
+    caption: "Suneo puffing his cheeks in a cute, sulking reaction while wearing his pink hoodie outdoors.",
+    resolution: "800 x 800",
+    date: "2024",
+    likes: 3040
+  },
   {
     id: "gal-doreamon-caught-snacking",
     title: "Caught in the Act: Sweet Snack Time",
