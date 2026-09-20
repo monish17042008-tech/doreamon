@@ -1,3 +1,6 @@
+import doreamonCaughtSnackingImg from "../assets/gallery/doreamon-caught-snacking.jpg";
+import nobitaHomeworkDeskImg from "../assets/gallery/nobita-homework-desk.jpg";
+import nobitaPortraitSmileImg from "../assets/gallery/nobita-portrait-smile.jpg";
 import treetopPicnicImg from "../assets/gallery/treetop-picnic-adventure.jpg";
 import spaceblazerCowboyImg from "../assets/gallery/spaceblazer-cowboy-frontier.jpg";
 import doreamonWhistlingImg from "../assets/gallery/doreamon-whistling-charm.jpg";
@@ -9,6 +12,39 @@ import nobitaShizukaPromiseImg from "../assets/gallery/nobita-shizuka-promise.jp
 import nobitaDeterminedStudyImg from "../assets/gallery/nobita-determined-study.jpg";
 
 export const galleryData = [
+  {
+    id: "gal-doreamon-caught-snacking",
+    title: "Caught in the Act: Sweet Snack Time",
+    category: "Characters",
+    src: doreamonCaughtSnackingImg,
+    thumbnail: doreamonCaughtSnackingImg,
+    caption: "Doreamon caught secretly feasting on sweets on the floor while Nobita and Dorami look on in total shock.",
+    resolution: "1920 x 1080",
+    date: "2024",
+    likes: 4680
+  },
+  {
+    id: "gal-nobita-homework-desk",
+    title: "Nobita's Late-Night Study Struggle",
+    category: "Characters",
+    src: nobitaHomeworkDeskImg,
+    thumbnail: nobitaHomeworkDeskImg,
+    caption: "Nobita pondering over complex geometry equations and diagrams late at his study desk.",
+    resolution: "1080 x 1080",
+    date: "2024",
+    likes: 3720
+  },
+  {
+    id: "gal-nobita-portrait-smile",
+    title: "Nobita Nobi Cheerful Portrait",
+    category: "Characters",
+    src: nobitaPortraitSmileImg,
+    thumbnail: nobitaPortraitSmileImg,
+    caption: "A bright and gentle close-up portrait of Nobita in his classic yellow shirt and round glasses.",
+    resolution: "720 x 960",
+    date: "2024",
+    likes: 3340
+  },
   {
     id: "gal-treetop-picnic",
     title: "Treetop Canopy Picnic Adventure",
